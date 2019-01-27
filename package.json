@@ -1,0 +1,52 @@
+{
+  "name": "@servall/app-config-plugin",
+  "description": "Webpack plugin for app-config",
+  "version": "0.3-dev",
+  "license": "MPL-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": {
+    "name": "Servall Development",
+    "email": "admin@servalldev.com",
+    "url": "https://www.servalldev.com"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "test": "jest",
+    "lint": "tslint src/**/*.ts",
+    "fix": "yarn lint --fix",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "@servall/app-config": "0.4.0-alpha.0"
+  },
+  "peerDependencies": {
+    "webpack": "4"
+  },
+  "devDependencies": {
+    "@types/jest": "23",
+    "@types/node": "8",
+    "@types/webpack": "4",
+    "jest": "23",
+    "ts-jest": "23",
+    "tslint": "5",
+    "tslint-config-airbnb": "5",
+    "tslint-eslint-rules": "5",
+    "typescript": "3",
+    "webpack": "4"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testMatch": null,
+    "testRegex": "(tests/.*|src/.*\\.test)\\.(ts|js)$",
+    "testPathIgnorePatterns": [
+      "node_modules",
+      ".yarn-cache"
+    ],
+    "modulePathIgnorePatterns": [
+      "example",
+      "node_modules",
+      ".yarn-cache"
+    ]
+  }
+}

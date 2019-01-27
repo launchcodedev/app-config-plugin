@@ -1,0 +1,21 @@
+include:
+ - project: 'meat-n-potatoes/ci'
+   file: 'all.yml'
+   ref: v1
+
+stages:
+  - lint
+  - build
+  - test
+
+lint:
+  extends: .node-lint
+  stage: lint
+
+audit:
+  extends: .node-audit
+  stage: lint
+
+build:
+  extends: .node-build
+  stage: build
