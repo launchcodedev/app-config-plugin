@@ -50,13 +50,14 @@
     brfs "^1.4.0"
     unicode-trie "^0.3.0"
 
-"@servall/app-config@0.4.0-alpha.0":
-  version "0.4.0-alpha.0"
-  resolved "https://npm.servalldatasystems.com/@servall%2fapp-config/-/app-config-0.4.0-alpha.0.tgz#8111affd1435417f31e916d4a0e0a17d2a321c9e"
-  integrity sha512-tdDrqnw2QC3s7u0aFltdB+JcFCbQ88MyUxPXhDrDWMVXeXMI8/2CIHBnCF5X+P30tV7jqpi7LjJsNy2ARQWlHQ==
+"@servall/app-config@0.4":
+  version "0.4.0"
+  resolved "https://npm.servalldatasystems.com/@servall%2fapp-config/-/app-config-0.4.0.tgz#aa607e78cad41fb2e7e12e9264c2a00e7e295dc7"
+  integrity sha512-pxpQQq2AcyXKsmyfDO/jkFiLQFhun3A411dpMM4rNHCnKB8uhphL5MJNKx0xN4JRpIjLxNUmr42u06CDD33Ujw==
   dependencies:
     "@iarna/toml" "2"
     ajv "6"
+    common-tags "1"
     execa "1"
     fs-extra "5"
     js-yaml "3"
@@ -1141,6 +1142,11 @@ commander@^2.12.1:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
+
+common-tags@1:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
+  integrity sha512-6P6g0uetGpW/sdyUy/iQQCbFF0kWVMSIVSyYz7Zgjcgh8mgw8PQzDNZeyZ5DQ2gM7LBoZPHmnjz8rUthkBG5tw==
 
 commondir@^1.0.1:
   version "1.0.1"

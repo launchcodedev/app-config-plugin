@@ -18,7 +18,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@servall/app-config": "0.4.0-alpha.0",
+    "@servall/app-config": "0.4",
     "loader-utils": "1"
   },
   "peerDependencies": {
