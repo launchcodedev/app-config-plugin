@@ -18,15 +18,20 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@servall/app-config": "0.4.0-alpha.0"
+    "@servall/app-config": "0.4.0-alpha.0",
+    "loader-utils": "1"
   },
   "peerDependencies": {
+    "html-webpack-plugin": "3",
     "webpack": "4"
   },
   "devDependencies": {
+    "@types/html-webpack-plugin": "3",
     "@types/jest": "23",
+    "@types/loader-utils": "1",
     "@types/node": "8",
     "@types/webpack": "4",
+    "html-webpack-plugin": "3",
     "jest": "23",
     "ts-jest": "23",
     "tslint": "5",
