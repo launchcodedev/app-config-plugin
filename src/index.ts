@@ -39,17 +39,17 @@ export default class AppConfigPlugin {
         .htmlWebpackPluginAlterAssetTags.tapPromise('AppConfigPlugin', async (html) => {
           const { nonSecrets } = await loadValidated();
 
+          // remove placeholder <script id="app-config"></script> if it exists
+          const head = html.head.filter(({ attributes }) => attributes.id !== 'app-config');
+
           return {
             ...html,
-            head: [
-              ...html.head,
-              {
-                tagName: 'script',
-                attributes: { id: 'app-config' },
-                voidTag: false,
-                innerHTML: `window._appConfig = ${JSON.stringify(nonSecrets)}`,
-              },
-            ],
+            head: head.concat({
+              tagName: 'script',
+              attributes: { id: 'app-config' },
+              voidTag: false,
+              innerHTML: `window._appConfig = ${JSON.stringify(nonSecrets)}`,
+            }),
           };
         });
     });
