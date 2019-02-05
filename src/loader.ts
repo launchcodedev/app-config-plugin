@@ -22,5 +22,5 @@ const loader: wp.loader.Loader = function (source) {
   }).catch(err => callback(err));
 };
 
-export const test = /($@servall\/app-config)|(\.?app-config\.(toml|yml|json|json5))/;
+export const test = /(^@servall\/app-config)|(\.?app-config(\.\w+)?\.(toml|yml|yaml|json|json5))/;
 export default loader;
