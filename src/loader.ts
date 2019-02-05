@@ -15,7 +15,11 @@ const loader: wp.loader.Loader = function (source) {
   }
 
   // we only inject nonSecrets into bundles, for obvious reasons
-  loadValidated().then(({ nonSecrets }) => {
+  loadValidated().then(({ nonSecrets, fileSource }) => {
+    if (fileSource) {
+      this.addDependency(fileSource);
+    }
+
     callback(null, `
       export default ${JSON.stringify(nonSecrets)};
     `);
