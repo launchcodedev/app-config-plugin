@@ -1,7 +1,7 @@
 {
   "name": "@servall/app-config-plugin",
   "description": "Webpack plugin for app-config",
-  "version": "0.1.3-dev",
+  "version": "0.2.0-dev",
   "license": "MPL-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,22 +18,23 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@servall/app-config": "0.4",
-    "loader-utils": "1"
+    "loader-utils": "1",
+    "@servall/app-config": "0"
   },
   "peerDependencies": {
+    "@servall/app-config": "*",
     "html-webpack-plugin": "3",
     "webpack": "4"
   },
   "devDependencies": {
     "@types/html-webpack-plugin": "3",
-    "@types/jest": "23",
+    "@types/jest": "24",
     "@types/loader-utils": "1",
     "@types/node": "8",
     "@types/webpack": "4",
     "html-webpack-plugin": "3",
-    "jest": "23",
-    "ts-jest": "23",
+    "jest": "24",
+    "ts-jest": "24",
     "tslint": "5",
     "tslint-config-airbnb": "5",
     "tslint-eslint-rules": "5",
