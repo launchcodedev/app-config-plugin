@@ -1,7 +1,7 @@
 {
   "name": "@servall/app-config-plugin",
   "description": "Webpack plugin for app-config",
-  "version": "0.2.0-dev",
+  "version": "0.2.0",
   "license": "MPL-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,8 +18,8 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "loader-utils": "1",
-    "@servall/app-config": "0"
+    "@servall/app-config": "0",
+    "loader-utils": "1"
   },
   "peerDependencies": {
     "@servall/app-config": "*",
