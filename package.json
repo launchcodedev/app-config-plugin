@@ -13,8 +13,8 @@
   "scripts": {
     "build": "tsc -b",
     "clean": "rm -rf dist *.tsbuildinfo",
-    "lint": "dev lint",
-    "fix": "dev lint --fix",
+    "lint": "tslint src/**/*.ts",
+    "fix": "yarn lint --fix",
     "test": "jest",
     "prepublishOnly": "yarn clean && yarn build"
   },
