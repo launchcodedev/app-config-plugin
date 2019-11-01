@@ -15,6 +15,7 @@ lint:
 audit:
   extends: .node-audit
   stage: lint
+  allow_failure: true
 
 build:
   extends: .node-build
