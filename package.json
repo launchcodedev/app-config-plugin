@@ -11,11 +11,12 @@
     "url": "https://www.servalldev.com"
   },
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "tsc -b",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "lint": "dev lint",
+    "fix": "dev lint --fix",
     "test": "jest",
-    "lint": "tslint src/**/*.ts",
-    "fix": "yarn lint --fix",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
     "@servall/app-config": "1",

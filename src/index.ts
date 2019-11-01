@@ -24,10 +24,14 @@ export default class AppConfigPlugin {
         if (!resolve) return;
 
         if (resolve.request === '@servall/app-config' || resolve.request === 'app-config') {
-          const { fileSource } = await loadValidated();
+          try {
+            const { fileSource } = await loadValidated();
 
-          if (fileSource) {
-            resolve.request = fileSource;
+            if (fileSource) {
+              resolve.request = fileSource;
+            }
+          } catch (err) {
+            throw new Error(err.message);
           }
         }
 
