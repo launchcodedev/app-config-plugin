@@ -1,22 +1,26 @@
 include:
- - project: 'meat-n-potatoes/ci'
-   file: 'all.yml'
-   ref: v1
+  - project: 'meat-n-potatoes/ci'
+    file: 'all.yml'
+    ref: v2
 
 stages:
   - lint
   - build
   - test
+  - publish
 
 lint:
   extends: .node-lint
   stage: lint
 
-audit:
-  extends: .node-audit
-  stage: lint
-  allow_failure: true
-
 build:
   extends: .node-build
   stage: build
+
+test:
+  extends: .node-test
+  stage: test
+
+publish:
+  extends: .node-publish-tag
+  stage: publish
