@@ -1,59 +1,67 @@
 {
-  "name": "@servall/app-config-plugin",
+  "name": "@lcdev/app-config-plugin",
   "description": "Webpack plugin for app-config",
   "version": "0.3.1-dev",
   "license": "MPL-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": {
-    "name": "Servall Development",
-    "email": "admin@servalldev.com",
-    "url": "https://www.servalldev.com"
+    "name": "Launchcode",
+    "email": "admin@lc.dev",
+    "url": "https://lc.dev"
   },
   "scripts": {
     "build": "tsc -b",
     "clean": "rm -rf dist *.tsbuildinfo",
-    "lint": "tslint src/**/*.ts",
-    "fix": "yarn lint --fix",
+    "lint": "eslint --ext .ts,.tsx src",
+    "fix": "eslint --ext .ts,.tsx src --fix",
     "test": "jest",
     "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
-    "@servall/app-config": "1",
+    "@lcdev/app-config": "1",
     "loader-utils": "1"
   },
   "peerDependencies": {
-    "@servall/app-config": "*",
+    "@lcdev/app-config": "*",
     "html-webpack-plugin": "3",
     "webpack": "4"
   },
   "devDependencies": {
+    "@commitlint/cli": "8",
+    "@lcdev/commitlint": "1",
+    "@lcdev/eslint-config": "0.2",
+    "@lcdev/jest": "0.1",
+    "@lcdev/prettier": "0.1",
+    "@lcdev/tsconfig": "0.1",
     "@types/html-webpack-plugin": "3",
     "@types/jest": "24",
     "@types/loader-utils": "1",
     "@types/node": "8",
     "@types/webpack": "4",
+    "eslint": "6",
     "html-webpack-plugin": "3",
+    "husky": "3",
     "jest": "24",
-    "ts-jest": "24",
-    "tslint": "5",
-    "tslint-config-airbnb": "5",
-    "tslint-eslint-rules": "5",
+    "prettier": "1",
     "typescript": "3",
     "webpack": "4"
   },
+  "prettier": "@lcdev/prettier",
+  "eslintConfig": {
+    "extends": "@lcdev"
+  },
   "jest": {
-    "preset": "ts-jest",
-    "testMatch": null,
-    "testRegex": "(tests/.*|src/.*\\.test)\\.(ts|js)$",
-    "testPathIgnorePatterns": [
-      "node_modules",
-      ".yarn-cache"
-    ],
-    "modulePathIgnorePatterns": [
-      "example",
-      "node_modules",
-      ".yarn-cache"
+    "preset": "@lcdev/jest"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@lcdev/commitlint"
     ]
   }
 }

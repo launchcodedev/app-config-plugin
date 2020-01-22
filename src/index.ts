@@ -1,5 +1,5 @@
 import { Compiler } from 'webpack';
-import { loadValidated } from '@servall/app-config/dist/exports';
+import { loadValidated } from '@lcdev/app-config/dist/exports';
 import { Hooks } from 'html-webpack-plugin';
 
 export { test as regex } from './loader';
@@ -19,11 +19,11 @@ export default class AppConfigPlugin {
       this.injectHead(compiler);
     }
 
-    compiler.hooks.normalModuleFactory.tap('AppConfigPlugin', (factory) => {
-      factory.hooks.beforeResolve.tapPromise('AppConfigPlugin', async (resolve) => {
+    compiler.hooks.normalModuleFactory.tap('AppConfigPlugin', factory => {
+      factory.hooks.beforeResolve.tapPromise('AppConfigPlugin', async resolve => {
         if (!resolve) return;
 
-        if (resolve.request === '@servall/app-config' || resolve.request === 'app-config') {
+        if (resolve.request === '@lcdev/app-config' || resolve.request === 'app-config') {
           try {
             const { fileSource } = await loadValidated();
 
@@ -41,9 +41,10 @@ export default class AppConfigPlugin {
   }
 
   injectHead(compiler: Compiler) {
-    compiler.hooks.compilation.tap('AppConfigPlugin', (compilation) => {
-      (compilation.hooks as Hooks)
-        .htmlWebpackPluginAlterAssetTags.tapPromise('AppConfigPlugin', async (html) => {
+    compiler.hooks.compilation.tap('AppConfigPlugin', compilation => {
+      (compilation.hooks as Hooks).htmlWebpackPluginAlterAssetTags.tapPromise(
+        'AppConfigPlugin',
+        async html => {
           const { nonSecrets } = await loadValidated();
 
           // remove placeholder <script id="app-config"></script> if it exists
@@ -58,7 +59,8 @@ export default class AppConfigPlugin {
               innerHTML: `window._appConfig = ${JSON.stringify(nonSecrets)}`,
             }),
           };
-        });
+        },
+      );
     });
   }
 }

@@ -1,3 +1,3 @@
-import config from '@servall/app-config';
+import config from '@lcdev/app-config';
 
 console.log(config);

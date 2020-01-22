@@ -13,15 +13,10 @@ test('test', async () => {
       filename: 'main.js',
     },
 
-    plugins: [
-      new HtmlPlugin(),
-      new AppConfigPlugin(),
-    ],
+    plugins: [new HtmlPlugin(), new AppConfigPlugin()],
 
     module: {
-      rules: [
-        { test: regex, use: { loader } },
-      ],
+      rules: [{ test: regex, use: { loader } }],
     },
   };
 
@@ -30,12 +25,18 @@ test('test', async () => {
       if (err) reject(err);
       if (stats.hasErrors()) reject(stats.toString());
 
-      const { children: [{ modules }] } = stats.toJson();
+      const {
+        children: [{ modules }],
+      } = stats.toJson();
 
-      expect(modules.some(({ name, source }: any) => {
-        return name === './.app-config.toml'
-          && source.includes('export default {"apiURL":"http://localhost:8000"}');
-      })).toBe(true);
+      expect(
+        modules.some(({ name, source }: any) => {
+          return (
+            name === './.app-config.toml' &&
+            source.includes('export default {"apiURL":"http://localhost:8000"}')
+          );
+        }),
+      ).toBe(true);
 
       resolve();
     });
@@ -52,10 +53,7 @@ test('test inject head', async () => {
       filename: 'main.js',
     },
 
-    plugins: [
-      new HtmlPlugin(),
-      new AppConfigPlugin({ headerInjection: true }),
-    ],
+    plugins: [new HtmlPlugin(), new AppConfigPlugin({ headerInjection: true })],
 
     module: {
       rules: [
@@ -77,12 +75,17 @@ test('test inject head', async () => {
       if (err) reject(err);
       if (stats.hasErrors()) reject(stats.toString());
 
-      const { children: [{ modules }] } = stats.toJson();
+      const {
+        children: [{ modules }],
+      } = stats.toJson();
 
-      expect(modules.some(({ name, source }: any) => {
-        return name === './.app-config.toml'
-          && source.includes('export default window._appConfig;');
-      })).toBe(true);
+      expect(
+        modules.some(({ name, source }: any) => {
+          return (
+            name === './.app-config.toml' && source.includes('export default window._appConfig;')
+          );
+        }),
+      ).toBe(true);
 
       resolve();
     });

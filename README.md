@@ -1,6 +1,6 @@
 ## App Config Webpack Plugin
 ```javascript
-import AppConfigPlugin, { regex, loader } from '@servall/app-config-plugin';
+import AppConfigPlugin, { regex, loader } from '@lcdev/app-config-plugin';
 
 // in your plugins:
 plugins: [
