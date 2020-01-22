@@ -25,9 +25,8 @@ test('test', async () => {
       if (err) reject(err);
       if (stats.hasErrors()) reject(stats.toString());
 
-      const {
-        children: [{ modules }],
-      } = stats.toJson();
+      const { children } = stats.toJson();
+      const [{ modules = [] }] = children || [];
 
       expect(
         modules.some(({ name, source }: any) => {
@@ -75,9 +74,8 @@ test('test inject head', async () => {
       if (err) reject(err);
       if (stats.hasErrors()) reject(stats.toString());
 
-      const {
-        children: [{ modules }],
-      } = stats.toJson();
+      const { children } = stats.toJson();
+      const [{ modules = [] }] = children || [];
 
       expect(
         modules.some(({ name, source }: any) => {
