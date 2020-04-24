@@ -1,4 +1,8 @@
 ## App Config Webpack Plugin
+[![Licensed under MPL 2.0](https://img.shields.io/badge/license-MPL_2.0-green.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
+[![Build Status](https://github.com/servall/app-config-plugin/workflows/CI/badge.svg)](https://github.com/servall/app-config-plugin/actions)
+[![npm](https://img.shields.io/npm/v/@lcdev/app-config-plugin.svg)](https://www.npmjs.com/package/@lcdev/app-config-plugin)
+
 ```javascript
 import AppConfigPlugin, { regex, loader } from '@lcdev/app-config-plugin';
 
