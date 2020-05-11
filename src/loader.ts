@@ -34,5 +34,5 @@ const loader: wp.loader.Loader = function() {
     .catch(err => callback(err));
 };
 
-export const test = /(^@lcdev\/app-config)|(\.?app-config(\.\w+)?\.(toml|yml|yaml|json|json5))/;
+export const test = /(^@(lcdev|servall)\/app-config)|(\.?app-config(\.\w+)?\.(toml|yml|yaml|json|json5))/;
 export default loader;
