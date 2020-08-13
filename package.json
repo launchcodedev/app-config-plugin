@@ -30,7 +30,7 @@
     "prepublishOnly": "yarn clean && yarn build && yarn build:es"
   },
   "dependencies": {
-    "@lcdev/app-config": "1",
+    "@lcdev/app-config": "2.0.0-alpha.6",
     "loader-utils": "1"
   },
   "peerDependencies": {
@@ -49,6 +49,7 @@
     "@types/jest": "24",
     "@types/loader-utils": "1",
     "@types/node": "8",
+    "@types/openpgp": "4",
     "@types/webpack": "4",
     "eslint": "6",
     "html-webpack-plugin": "3",
