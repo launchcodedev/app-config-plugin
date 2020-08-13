@@ -1,7 +1,7 @@
 {
   "name": "@lcdev/app-config-plugin",
   "description": "Webpack plugin for app-config",
-  "version": "0.3.2",
+  "version": "2.0.0-alpha.0",
   "license": "MPL-2.0",
   "main": "dist/index.js",
   "module": "dist/es/index.js",
@@ -30,16 +30,16 @@
     "prepublishOnly": "yarn clean && yarn build && yarn build:es"
   },
   "dependencies": {
-    "@lcdev/app-config": "1",
     "loader-utils": "1"
   },
   "peerDependencies": {
-    "@lcdev/app-config": "*",
+    "@lcdev/app-config": "1 || 2",
     "html-webpack-plugin": "3",
     "webpack": "4"
   },
   "devDependencies": {
     "@commitlint/cli": "8",
+    "@lcdev/app-config": "2.0.0-alpha.11",
     "@lcdev/commitlint": "1",
     "@lcdev/eslint-config": "0.2",
     "@lcdev/jest": "0.1",
@@ -49,6 +49,7 @@
     "@types/jest": "24",
     "@types/loader-utils": "1",
     "@types/node": "8",
+    "@types/openpgp": "4",
     "@types/webpack": "4",
     "eslint": "6",
     "html-webpack-plugin": "3",
