@@ -1,3 +1,7 @@
+**NOTE**: This package is now replaced by [@lcdev/app-config-webpack-plugin](https://www.npmjs.com/package/@lcdev/app-config-webpack-plugin). This package will not support v2.
+
+---
+
 ## App Config Webpack Plugin
 [![Licensed under MPL 2.0](https://img.shields.io/badge/license-MPL_2.0-green.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
 [![Build Status](https://github.com/launchcodedev/app-config-plugin/workflows/CI/badge.svg)](https://github.com/launchcodedev/app-config-plugin/actions)
